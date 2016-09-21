@@ -140,7 +140,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="erm">
 		<text>
-			%\m C -indent%.erase( std::remove( begin(%\m C%), end(%\m C%), %\c ), end(%\m C%) );
+			%\m C%.erase( std::remove( begin(%\m C%), end(%\m C%), %\c ), end(%\m C%) );
 		</text>
 	</p>
 	<p n="tfm">
