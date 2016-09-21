@@ -96,7 +96,7 @@
 	</p>
 	<p n="=surround_with_erm">
 		<text>
-			%\m C -indent%.erase( std::remove( begin(%\m sur_text%), end(%\m sur_text%), %\c ), end(%\m sur_text%) );
+			%\m sur_text%.erase( std::remove( begin(%\m sur_text%), end(%\m sur_text%), %\c ), end(%\m sur_text%) );
 		</text>
 	</p>
 	<p n="=surround_with_tfm">
