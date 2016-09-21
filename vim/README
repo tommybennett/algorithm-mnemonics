@@ -1,0 +1,7 @@
+Place these files in $HOME/.vim/ftplugin/cpp
+
+Add the line:
+
+filetype plugin on
+
+to your .vimrc file

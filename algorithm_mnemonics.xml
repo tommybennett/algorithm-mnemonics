@@ -1,0 +1,572 @@
+<!-- 
+
+Copyright (c) 2016, Tommy Bennett
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. All advertising materials mentioning features or use of this software
+   must display the following acknowledgement:
+   This product includes software developed by the <organization>.
+4. Neither the name of the <organization> nor the
+   names of its contributors may be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY <COPYRIGHT HOLDER> ''AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+
+<!-- Algorithm Mnemonics: Increase Productivity with STL Algorithms
+  
+     In the algorithm mnemonic text, the following placeholders
+     are provided:
+
+     %\c     Recommended places where the cursor should appear after the 
+             mnemonic expansion.  It is also recommended to allow the user to 
+             tab through each place where %\c appears.
+     %\m C%  This is where the container should appear after mnemonic expansion.
+
+--> 
+
+<algorithm-mnemonics>
+	<p n="ihp">
+		<text>
+			if (std::is_heap(begin(%\m C%), end(%\m C%))) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="mme">
+		<text>
+			auto minmax = std::minmax_element(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="ihu">
+		<text>
+			auto pos = std::is_heap_until(begin(%\m C%), end(%\m C%));
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="acl">
+		<text>
+			auto sum = std::accumulate( begin(%\m C%), end(%\m C%), 0, [](int total, %\c) {
+			  %\c
+			} );
+		</text>
+	</p>
+	<p n="eql">
+		<text>
+			if (std::equal(begin(%\m C%), end(%\m C%), begin(%\c))) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="acm">
+		<text>
+			auto sum = std::accumulate(begin(%\m C%), end(%\m C%), 0);
+		</text>
+	</p>
+	<p n="ucp">
+		<text>
+			std::unique_copy(begin(%\m C%), end(%\m C%),
+			  std::ostream_iterator&lt;string&gt;(std::cout, "\n"));
+		</text>
+	</p>
+	<p n="ita">
+		<text>
+			std::iota(begin(%\m C%), end(%\m C%), %\c);
+		</text>
+	</p>
+	<p n="iss">
+		<text>
+			if (std::is_sorted(begin(%\m C%), end(%\m C%))) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="rpc">
+		<text>
+			std::replace_copy(begin(%\m C%), end(%\m C%), begin(%\m C%), %\c, %\c);
+		</text>
+	</p>
+	<p n="isu">
+		<text>
+			auto pos = std::is_sorted_until(begin(%\m C%), end(%\m C%));
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="rmv">
+		<text>
+			auto pos = std::remove(begin(%\m C%), end(%\m C%), %\c);
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="nth">
+		<text>
+			std::nth_element(begin(%\m C%), end(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="rpi">
+		<text>
+			std::replace_if(begin(%\m C%), end(%\m C%), [](%\c) {
+			%\c
+			}, %\c);
+		</text>
+	</p>
+	<p n="rpl">
+		<text>
+			std::replace(begin(%\m C%), end(%\m C%), %\c, %\c);
+		</text>
+	</p>
+	<p n="erm">
+		<text>
+			%\m C -indent%.erase( std::remove( begin(%\m C%), end(%\m C%), %\c ), end(%\m C%) );
+		</text>
+	</p>
+	<p n="tfm">
+		<text>
+			std::transform(begin(%\m C%), end(%\m C%),
+			  begin(%\m C%), [](%\c) {
+			%\c%
+			} );
+		</text>
+	</p>
+	<p n="fln">
+		<text>
+			std::fill_n(begin(%\m C%), %\c, %\c );
+		</text>
+	</p>
+	<p n="alo">
+		<text>
+			if (std::all_of(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+			} ) ) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="prp">
+		<text>
+			if (std::prev_permutation(begin(%\m C%), end(%\m C%))) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="ltr">
+		<text>
+			%\m C%.erase(0, %\m C%.find_first_not_of(" \t\n\r"));
+		</text>
+	</p>
+	<p n="upr">
+		<text>
+			std::transform(begin(%\m C%), end(%\m C%), begin(%\m C%), [](char c) {
+			return std::toupper(c);
+			} );
+			%\c
+		</text>
+	</p>
+	<p n="psc">
+		<text>
+			std::partial_sort_copy(begin(%\m C%), end(%\m C%),
+			                  begin(%\c), end(%\c));
+		</text>
+	</p>
+	<p n="ppt">
+		<text>
+			auto pos = std::partition_point(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+			} );
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="cnt">
+		<text>
+			auto n = std::count(begin(%\m C%), end(%\m C%), %\c);
+		</text>
+	</p>
+	<p n="uqe">
+		<text>
+			auto pos = std::unique(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="sti">
+		<text>
+			std::cin &gt;&gt; 
+		</text>
+	</p>
+	<p n="cpy">
+		<text>
+			std::copy(begin(%\m C%), end(%\m C%), begin(%\c));
+		</text>
+	</p>
+	<p n="sto">
+		<text>
+			std::cout &lt;&lt; 
+		</text>
+	</p>
+	<p n="cpb">
+		<text>
+			std::copy_backward(begin(%\m C%), end(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="swr">
+		<text>
+			swap_ranges(begin(%\m C%), end(%\m C%), begin(%\c));
+		</text>
+	</p>
+	<p n="rtc">
+		<text>
+			std::rotate_copy(begin(%\m C%), begin(%\c), end(%\m C%),
+			  begin(%\c));
+		</text>
+	</p>
+	<p n="mxe">
+		<text>
+			auto pos = std::max_element(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="rte">
+		<text>
+			std::rotate(begin(%\m C%), begin(%\c), end(%\m C%));
+		</text>
+	</p>
+	<p n="stv">
+		<text>
+			std::vector&lt;%\c&gt; %\c
+		</text>
+	</p>
+	<p n="cpi">
+		<text>
+			std::copy_if(begin(%\m C%), end(%\m C%), begin(%\c),
+			[](%\c) {
+        %\c
+			} );
+		</text>
+	</p>
+	<p n="cni">
+		<text>
+			auto n = std::count_if(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+			});
+		</text>
+	</p>
+	<p n="cpn">
+		<text>
+			std::copy_n(begin(%\m C%), %\c, end(%\m C%));
+		</text>
+	</p>
+	<p n="srt">
+		<text>
+			std::sort(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="spt">
+		<text>
+			auto pos = std::stable_partition(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c});
+			if (pos != end(%\m C%)) {
+        %\c
+			}
+		</text>
+	</p>
+	<p n="msm">
+		<text>
+			auto values = std::mismatch(begin(%\m C%), end(%\m C%), begin(%\m C%));
+			if (values.first == end(%\m C%)) {
+        %\c
+			} else {
+        %\c
+			}
+		</text>
+	</p>
+	<p n="mpb">
+		<text>
+			std::move_backward(begin(%\m C%), end(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="ptc">
+		<text>
+			std::partition_copy(begin(%\m C%), end(%\m C%),
+			                  begin(%\c), end(%\c));
+		</text>
+	</p>
+	<p n="pst">
+		<text>
+			std::partial_sort(begin(%\m C%), end(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="fnd">
+		<text>
+			auto pos = std::find(begin(%\m C%), end(%\m C%), %\c);
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="fre">
+		<text>
+			std::for_each( begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+			} );
+		</text>
+	</p>
+	<p n="mne">
+		<text>
+			auto pos = std::min_element(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="fne">
+		<text>
+			auto pos = std::find_end(begin(%\m C%), end(%\m C%),
+			  begin(%\c), end(%\c));
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="mrg">
+		<text>
+			std::merge(begin(%\m C%), end(%\m C%),
+			begin(%\c), end(%\c), begin(%\c));
+		</text>
+	</p>
+	<p n="srh">
+		<text>
+      auto pos = std::search(begin(%\m C%), end(%\m C%),
+        egin(%\c), end(%\c));
+			if (pos != end(%\m C%)) {
+        %\c
+			}
+		</text>
+	</p>
+	<p n="fni">
+		<text>
+			auto pos = std::find_if(begin(%\m C%), end(%\m C%), []( %\c ) {
+			  %\c
+			});
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="ptn">
+		<text>
+			auto pos = std::partition(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+			});
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="srn">
+		<text>
+			auto pos = std::search_n(begin(%\m C%), end(%\m C%),%\c,%\c);
+			if (pos != end(%\m C%)) {
+        %\c
+			}
+		</text>
+	</p>
+	<p n="ano">
+		<text>
+			if (std::any_of(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+   	  } ) ) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="nxp">
+		<text>
+			if (std::next_permutation(begin(%\m C%), end(%\m C%))) {
+        %\c
+			}
+		</text>
+	</p>
+	<p n="rvr">
+		<text>
+			std::reverse(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="rmc">
+		<text>
+			std::remove_copy(begin(%\m C%), end(%\m C%),
+			  begin(%\m C%), %\c);
+		</text>
+	</p>
+	<p n="sts">
+		<text>
+			std::stable_sort(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="rmf">
+		<text>
+      std::remove_copy_if( begin(%\m C%), end(%\m C%),
+        begin(%\m C%), [](%\c) {
+			  %\c
+			} );
+		</text>
+	</p>
+	<p n="rci">
+		<text>
+			std::replace_copy_if(begin(%\m C%), end(%\m C%),
+			  begin(%\m C%), [](%\c) {
+			  %\c
+			  }, %\c );
+		</text>
+	</p>
+	<p n="rmi">
+		<text>
+			auto pos = std::remove_if( begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+			} );
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="rvc">
+		<text>
+			std::reverse_copy(begin(%\m C%), end(%\m C%), begin(%\c));
+		</text>
+	</p>
+	<p n="oit">
+		<text>
+			std::copy( begin( %\m C% ), end( %\m C% ), std::ostream_iterator&lt;%\c&gt;{
+			%\istd::cout, "%\c"
+			} );
+		</text>
+	</p>
+	<p n="sth">
+		<text>
+			std::sort_heap(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="phh">
+		<text>
+			std::push_heap(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="ffo">
+		<text>
+			auto pos = std::find_first_of(begin(%\m C%), end(%\m C%),
+			  begin(%\c), end(%\c));
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="gnr">
+		<text>
+			std::generate(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+			} );
+		</text>
+	</p>
+	<p n="ipr">
+		<text>
+			if (std::is_permutation(begin(%\m C%), end(%\m C%), begin(%\c))) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="ipt">
+		<text>
+			if (std::is_partitioned(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+		  } ) ) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="mkh">
+		<text>
+			std::make_heap(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="fil">
+		<text>
+			std::fill(begin(%\m C%), end(%\m C%), %\c);
+		</text>
+	</p>
+	<p n="fin">
+		<text>
+			auto pos = std::find_if_not(begin(%\m C%), end(%\m C%),[](%\c) {
+	  		%\c
+			} );
+			if (pos != end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="lwr">
+		<text>
+			std::transform(begin(%\m C%), end(%\m C%), begin(%\m C%), [](char c) {
+			return std::tolower(c); } );
+		</text>
+	</p>
+	<p n="lxc">
+		<text>
+			if (std::lexigraphical_compare(begin(%\m C%), end(%\m C%), 
+			  begin(%\c), end(%\c)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="shf">
+		<text>
+			std::random_shuffle(begin(%\m C%), end(%\m C%));
+		</text>
+	</p>
+	<p n="ajf">
+		<text>
+			auto pos = std::adjacent_find(begin(%\m C%), end(%\m C%));
+			if (pos != end(%\m C%)) {
+        %\c
+			}
+		</text>
+	</p>
+	<p n="trm">
+		<text>
+			%\m C%.erase(%\m C%.find_last_not_of(" \t\n\r") + 1);
+		</text>
+	</p>
+	<p n="gnn">
+		<text>
+			std::generate_n(begin(%\m C%), %\c, [](%\c) {
+			  %\c
+			} );
+		</text>
+	</p>
+	<p n="nno">
+		<text>
+			if (std::none_of(begin(%\m C%), end(%\m C%), [](%\c) {
+			  %\c
+  	  } ) ) {
+			  %\c
+			}
+		</text>
+	</p>
+</algorithm-mnemonics>
