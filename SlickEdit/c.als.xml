@@ -6,30 +6,9 @@
 			}
 		</text>
 	</p>
-	<p n="afa">
-		<text>
-			ASSERT_FALSE(%\c)%\c
-		</text>
-	</p>
-	<p n="=surround_with_const_cast">
-		<text>
-			const_cast&lt;%\c&gt;(%\m sur_text%)
-		</text>
-	</p>
 	<p n="=surround_with_mme">
 		<text>
 			auto minmax = std::minmax_element(begin(%\m sur_text%), end(%\m sur_text%));
-		</text>
-	</p>
-	<p n="=surround_with_include_once">
-		<params>
-			<param n="macro" default="" prompt="Symbol"/>
-		</params>
-		<text>
-			#ifndef %(macro)
-			#define %(macro)
-			%\m sur_text%
-			#endif // %(macro)
 		</text>
 	</p>
 	<p n="=surround_with_ihu">
@@ -37,20 +16,6 @@
 			auto pos = std::is_heap_until(begin(%\m sur_text%), end(%\m sur_text%));
 			if (pos != end(%\m sur_text%)) {
 			  %\c
-			}
-		</text>
-	</p>
-	<p n="=surround_with_#if">
-		<text>
-			%\m begin_line%#if %\c
-			%\m sur_text%
-			%\m begin_line%#endif
-		</text>
-	</p>
-	<p n="=surround_with_if">
-		<text>
-			if (%\c) {%\c 
-			%\m sur_text -ident%
 			}
 		</text>
 	</p>
@@ -70,7 +35,7 @@
 	</p>
 	<p n="=surround_with_acm">
 		<text>
-			%\cauto sum = std::accumulate(begin(%\m sur_text%), end(%\m sur_text%), 0);
+			auto sum = std::accumulate(begin(%\m sur_text%), end(%\m sur_text%), 0);
 		</text>
 	</p>
 	<p n="=surround_with_ucp">
@@ -81,32 +46,7 @@
 	</p>
 	<p n="=surround_with_ita">
 		<text>
-			std::iota(begin(%\m sur_text%),%\l end(%\m sur_text%), %\c);
-		</text>
-	</p>
-	<p n="cctr">
-		<text>
-			%\j( const %\j&amp; );%\m create_cctr%
-		</text>
-	</p>
-	<p n="=surround_with_func">
-		<text>
-			//
-			// %\cA function should know about and be responsible for one thing.
-			//
-			%\m sur_text -indent% {
-			  // &lt;Invariant Preconditions&gt;
-			%\l
-			  // Exception safe, exception nuetral, no throw
-			  // Basic Guarantee (no leaks)
-			  // Strong Guarantee (consistent state)
-			%\l
-			  // Everything on this side that throws
-			  // ---------------------------------------
-			  // Cleanup and update state on this side
-			%\l
-			  // &lt;Invariant Postconditions&gt;
-			}
+			std::iota(begin(%\m sur_text%), end(%\m sur_text%), %\c);
 		</text>
 	</p>
 	<p n="=surround_with_iss">
@@ -118,7 +58,7 @@
 	</p>
 	<p n="=surround_with_rpc">
 		<text>
-			std::replace_copy(begin(%\m sur_text%),%\l end(%\m sur_text%), begin(%\m sur_text%), oldValue, newValue);
+			std::replace_copy(begin(%\m sur_text%), end(%\m sur_text%), begin(%\m sur_text%), %\c, %\c);
 		</text>
 	</p>
 	<p n="=surround_with_isu">
@@ -131,21 +71,9 @@
 	</p>
 	<p n="=surround_with_rmv">
 		<text>
-			auto pos = std::remove(begin(%\m sur_text%),%\l end(%\m sur_text%), %\c);
+			auto pos = std::remove(begin(%\m sur_text%), end(%\m sur_text%), %\c);
 			if (pos != end(%\m sur_text%)) {
 			  %\c
-			}
-		</text>
-	</p>
-	<p n="rw">
-		<text>
-			std::istream&amp; read( std::istream&amp; );
-			std::ostream&amp; write( std::ostream&amp; ) const;
-			inline std::istream&amp; operator &gt;&gt;( std::istream&amp; is, %\j&amp; o ) {
-			  return o.read( is ); %\S
-			}
-			inline std::ostream&amp; operator &lt;&lt;( std::ostream&amp; os, const %\j&amp; o ) {
-			  return o.write( os );
 			}
 		</text>
 	</p>
@@ -154,18 +82,9 @@
 			std::nth_element(begin(%\m sur_text%), end(%\m sur_text%), end(%\m sur_text%));
 		</text>
 	</p>
-	<p n="=surround_with_try...catch...finally">
-		<text>
-			try {
-			%\m sur_text -indent%
-			} catch (%\c) { %\S
-			} finally {
-			}
-		</text>
-	</p>
 	<p n="=surround_with_rpi">
 		<text>
-			std::replace_if(begin(%\m sur_text%),%\l end(%\m sur_text%), [](%\c) {
+			std::replace_if(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
 			%\c
 			}, %\c);
 		</text>
@@ -177,7 +96,7 @@
 	</p>
 	<p n="=surround_with_erm">
 		<text>
-			%\m sur_text -indent%.erase( std::remove( begin(%\m sur_text%), end(%\m sur_text%), %\c ), end(%\m sur_text%) );
+			%\m C -indent%.erase( std::remove( begin(%\m sur_text%), end(%\m sur_text%), %\c ), end(%\m sur_text%) );
 		</text>
 	</p>
 	<p n="=surround_with_tfm">
@@ -196,9 +115,9 @@
 	<p n="=surround_with_alo">
 		<text>
 			if (std::all_of(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
-			%\c
+			  %\c
 			} ) ) {
-			%\c
+			  %\c
 			}
 		</text>
 	</p>
@@ -228,22 +147,10 @@
 			                  begin(%\c), end(%\c));
 		</text>
 	</p>
-	<p n="=surround_with_braces">
-		<text>
-			{
-			%\m sur_text -indent%
-			}
-		</text>
-	</p>
-	<p n="init">
-		<text>
-			void init( const %\j&amp; );%\m create_init%
-		</text>
-	</p>
 	<p n="=surround_with_ppt">
 		<text>
 			auto pos = std::partition_point(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
-			%\c
+			  %\c
 			} );
 			if (pos != end(%\m sur_text%)) {
 			  %\c
@@ -255,84 +162,14 @@
 			auto n = std::count(begin(%\m sur_text%), end(%\m sur_text%), %\c);
 		</text>
 	</p>
-	<p n="=surround_with_default">
-		<text>
-			default:
-			%\m sur_text -indent%
-		</text>
-	</p>
-	<p n="te">
-		<text>
-			%\itemplate &lt;typename T&gt; %\c
-		</text>
-	</p>
 	<p n="=surround_with_uqe">
 		<text>
-			%\cauto pos = std::unique(begin(%\m sur_text%), end(%\m sur_text%));
-		</text>
-	</p>
-	<p n="=surround_with_#ifndef">
-		<text>
-			%\m begin_line%#ifndef %\c
-			%\m sur_text%
-			%\m begin_line%#endif
-		</text>
-	</p>
-	<p n="tf">
-		<text>
-			TEST_F(%\c, %\c) {
-			%\i%\c
-			}
-		</text>
-	</p>
-	<p n="sti">
-		<text>
-			std::cin &gt;&gt; 
-		</text>
-	</p>
-	<p n="ti">
-		<text>
-			Times(%\c)%\c
+			auto pos = std::unique(begin(%\m sur_text%), end(%\m sur_text%));
 		</text>
 	</p>
 	<p n="=surround_with_cpy">
 		<text>
 			std::copy(begin(%\m sur_text%), end(%\m sur_text%), begin(%\c));
-		</text>
-	</p>
-	<p n="=surround_with_finally">
-		<text>
-			finally {
-			%\m sur_text -indent%
-			}
-		</text>
-	</p>
-	<p n="impl">
-		<text>
-			class impl;
-			std::unique_ptr&lt;impl&gt; impl_;
-		</text>
-	</p>
-	<p n="op==">
-		<text>
-			bool operator ==( const %\j&amp; ) const;
-		</text>
-	</p>
-	<p n="=surround_with_type_union">
-		<text>
-			typedef union %\c {
-			%\m sur_text -indent%
-			};
-		</text>
-	</p>
-	<p n="sto">
-		<text>
-			std::cout &lt;&lt; 
-		</text>
-	</p>
-	<p n="ddtr">
-		<text>
-			virtual ~%\j();%\m create_ddtr%
 		</text>
 	</p>
 	<p n="=surround_with_cpb">
@@ -342,30 +179,13 @@
 	</p>
 	<p n="=surround_with_swr">
 		<text>
-			swap_ranges(begin(%\m sur_text%), end(%\m sur_text%), begin(dest%\m sur_text%));
-		</text>
-	</p>
-	<p n="sts">
-		<text>
-			std::string %\c
+			swap_ranges(begin(%\m sur_text%), end(%\m sur_text%), begin(%\c));
 		</text>
 	</p>
 	<p n="=surround_with_rtc">
 		<text>
 			std::rotate_copy(begin(%\m sur_text%), begin(%\c), end(%\m sur_text%),
 			  begin(%\c));
-		</text>
-	</p>
-	<p n="=surround_with_type_struct">
-		<text>
-			typedef struct %\c {
-			%\m sur_text -indent%
-			};
-		</text>
-	</p>
-	<p n="ae">
-		<text>
-			ASSERT_EQ(%\c, %\c)%\c
 		</text>
 	</p>
 	<p n="=surround_with_mxe">
@@ -375,56 +195,22 @@
 	</p>
 	<p n="=surround_with_rte">
 		<text>
-			std::rotate(begin(%\m sur_text%), begin(dest%\m sur_text%), end(%\m sur_text%));
-		</text>
-	</p>
-	<p n="stv">
-		<text>
-			std::vector&lt;%\c&gt; %\c
-		</text>
-	</p>
-	<p n="=surround_with_#ifdef">
-		<text>
-			%\m begin_line%#ifdef %\c
-			%\m sur_text%
-			%\m begin_line%#endif
-		</text>
-	</p>
-	<p n="=surround_with_catch">
-		<text>
-			catch (%\c) {
-			%\m sur_text -indent%
-			}
+			std::rotate(begin(%\m sur_text%), begin(%\c), end(%\m sur_text%));
 		</text>
 	</p>
 	<p n="=surround_with_cpi">
 		<text>
-			std::copy_if(begin(%\m sur_text%),%\l end(%\m sur_text%),%\l begin(%\c),
+			std::copy_if(begin(%\m sur_text%), end(%\m sur_text%), begin(%\c),
 			[](%\c) {
+        %\c
 			} );
 		</text>
 	</p>
 	<p n="=surround_with_cni">
 		<text>
-			auto n = std::count_if(begin(%\m sur_text%),%\l end(%\m sur_text%),%\l [](%\c)%\l{
-			%\c%\i
+			auto n = std::count_if(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
+			  %\c
 			});
-		</text>
-	</p>
-	<p n="=surround_with_try...finally">
-		<text>
-			try {
-			%\m sur_text -indent%
-			} finally {
-			%\i%\c
-			}
-		</text>
-	</p>
-	<p n="=surround_with_union">
-		<text>
-			union {
-			%\m sur_text -indent%
-			} %\c;
 		</text>
 	</p>
 	<p n="=surround_with_cpn">
@@ -432,88 +218,28 @@
 			std::copy_n(begin(%\m sur_text%), %\c, end(%\m sur_text%));
 		</text>
 	</p>
-	<p n="=op">
-		<text>
-			%\j&amp; operator =( const %\j&amp; );
-			void Swap( %\j&amp; );%\m create_assignment_operator%
-		</text>
-	</p>
-	<p n="us">
-		<text>
-			using namespace %\c
-		</text>
-	</p>
-	<p n="=surround_with_static_cast">
-		<text>
-			static_cast&lt;%\c&gt;(%\m sur_text%)
-		</text>
-	</p>
-	<p n="=surround_with_struct">
-		<text>
-			struct {
-			%\m sur_text -indent%
-			} %\c;
-		</text>
-	</p>
-	<p n="test">
-		<text>
-			TEST(%\c,%\c) {
-			%\i%\c
-			}
-		</text>
-	</p>
 	<p n="=surround_with_srt">
 		<text>
-			sort(begin(%\m sur_text%), end(%\m sur_text%));
+			std::sort(begin(%\m sur_text%), end(%\m sur_text%));
 		</text>
 	</p>
 	<p n="=surround_with_spt">
 		<text>
-			auto pos = stable_partition(begin(%\m sur_text%),%\l end(%\m sur_text%),%\l [](const auto&amp; elem) {
-			%\c});
-			%\l
-			if (pos != end(pos)) {
+			auto pos = std::stable_partition(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
+			  %\c});
+			if (pos != end(%\m sur_text%)) {
+        %\c
 			}
-		</text>
-	</p>
-	<p n="inline">
-		<text>
-			inline %\c
-		</text>
-	</p>
-	<p n="=surround_with_new_c_file">
-		<text>
-			#include &lt;stdio.h&gt;
-			%\S
-			int main (int argc, char *argv[])
-			{
-			%\m sur_text -indent%
-			%\ireturn(0);
-			}
-		</text>
-	</p>
-	<p n="ath">
-		<text>
-			ASSERT_THAT(%\c, %\c)%\c
-		</text>
-	</p>
-	<p n="pimpl">
-		<text>
-			%\iclass impl;
-			%\istd::unique_ptr&lt;impl&gt; impl_;%\m create_pimpl%%\c
 		</text>
 	</p>
 	<p n="=surround_with_msm">
 		<text>
-			auto values = mismatch(begin(%\m sur_text%), end(%\m sur_text%), begin(%\m sur_text%));
-			%\cif (values.first == end(%\m sur_text%)) {
+			auto values = std::mismatch(begin(%\m sur_text%), end(%\m sur_text%), begin(%\m sur_text%));
+			if (values.first == end(%\m sur_text%)) {
+        %\c
 			} else {
+        %\c
 			}
-		</text>
-	</p>
-	<p n="atr">
-		<text>
-			ASSERT_TRUE(%\c)%\c
 		</text>
 	</p>
 	<p n="=surround_with_mpb">
@@ -563,43 +289,33 @@
 	</p>
 	<p n="=surround_with_mrg">
 		<text>
-			merge(begin(%\m sur_text%), end(%\m sur_text%),
-			begin(%\c), end(%\c), begin(%\c dest));
-		</text>
-	</p>
-	<p n="=surround_with_switch">
-		<text>
-			switch (%\c) {
-			%\m sur_text%
-			}
+			std::merge(begin(%\m sur_text%), end(%\m sur_text%),
+			begin(%\c), end(%\c), begin(%\c));
 		</text>
 	</p>
 	<p n="=surround_with_srh">
 		<text>
-			auto pos = search(begin(%\m sur_text%),%\l end(%\m sur_text%),begin(sub%\m sur_text%),%\l end(sub%\m sur_text%));
-			%\cif (pos != end(pos)) {
+      auto pos = std::search(begin(%\m sur_text%), end(%\m sur_text%),
+        egin(%\c), end(%\c));
+			if (pos != end(%\m sur_text%)) {
+        %\c
 			}
 		</text>
 	</p>
 	<p n="=surround_with_fni">
 		<text>
-			auto pos = std::find_if(begin(%\m sur_text%),%\l end(%\m sur_text%),%\l []( %\c )%\l{
-			%\c
+			auto pos = std::find_if(begin(%\m sur_text%), end(%\m sur_text%), []( %\c ) {
+			  %\c
 			});
 			if (pos != end(%\m sur_text%)) {
-			%\c
-			%\i}
-		</text>
-	</p>
-	<p n="p&gt;">
-		<text>
-			pimpl-&gt;
+			  %\c
+			}
 		</text>
 	</p>
 	<p n="=surround_with_ptn">
 		<text>
-			auto pos = std::partition(begin(%\m sur_text%),%\l end(%\m sur_text%),%\l [](%\c) {
-			%\c
+			auto pos = std::partition(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
+			  %\c
 			});
 			if (pos != end(%\m sur_text%)) {
 			  %\c
@@ -608,8 +324,9 @@
 	</p>
 	<p n="=surround_with_srn">
 		<text>
-			auto pos = search_n(begin(%\m sur_text%),%\l end(%\m sur_text%),count,value);
-			%\cif (pos != end(pos)) {
+			auto pos = std::search_n(begin(%\m sur_text%), end(%\m sur_text%),%\c,%\c);
+			if (pos != end(%\m sur_text%)) {
+        %\c
 			}
 		</text>
 	</p>
@@ -617,7 +334,7 @@
 		<text>
 			if (std::any_of(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
 			  %\c
-			  } ) ) {
+   	  } ) ) {
 			  %\c
 			}
 		</text>
@@ -625,6 +342,7 @@
 	<p n="=surround_with_nxp">
 		<text>
 			if (std::next_permutation(begin(%\m sur_text%), end(%\m sur_text%))) {
+        %\c
 			}
 		</text>
 	</p>
@@ -635,47 +353,26 @@
 	</p>
 	<p n="=surround_with_rmc">
 		<text>
-			std::remove_copy(begin(%\m sur_text%),%\l end(%\m sur_text%),
+			std::remove_copy(begin(%\m sur_text%), end(%\m sur_text%),
 			  begin(%\m sur_text%), %\c);
 		</text>
 	</p>
 	<p n="=surround_with_sts">
 		<text>
-			stable_sort(begin(%\m sur_text%), end(%\m sur_text%));
-		</text>
-	</p>
-	<p n="=surround_with_case">
-		<text>
-			case %\c:
-			%\m sur_text -indent%
-			break;
-		</text>
-	</p>
-	<p n="=surround_with_do...while">
-		<text>
-			do {
-			%\m sur_text -indent%
-			} while (%\c);
+			std::stable_sort(begin(%\m sur_text%), end(%\m sur_text%));
 		</text>
 	</p>
 	<p n="=surround_with_rmf">
 		<text>
-			std::remove_copy_if( begin(%\m sur_text%),%\l end(%\m sur_text%),%\l begin(%\m sur_text%), [](%\c) {
-			%\c
+      std::remove_copy_if( begin(%\m sur_text%), end(%\m sur_text%),
+        begin(%\m sur_text%), [](%\c) {
+			  %\c
 			} );
-		</text>
-	</p>
-	<p n="=surround_with_try...catch">
-		<text>
-			try {
-			%\m sur_text -indent%
-			} catch (%\c) { %\S
-			}
 		</text>
 	</p>
 	<p n="=surround_with_rci">
 		<text>
-			std::replace_copy_if(begin(%\m sur_text%),%\l end(%\m sur_text%),
+			std::replace_copy_if(begin(%\m sur_text%), end(%\m sur_text%),
 			  begin(%\m sur_text%), [](%\c) {
 			  %\c
 			  }, %\c );
@@ -684,29 +381,16 @@
 	<p n="=surround_with_rmi">
 		<text>
 			auto pos = std::remove_if( begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
-			%\c
+			  %\c
 			} );
 			if (pos != end(%\m sur_text%)) {
 			  %\c
 			}
 		</text>
 	</p>
-	<p n="dctr">
-		<text>
-			%\j();%\m create_dctr%
-		</text>
-	</p>
-	<p n="=surround_with_for">
-		<text>
-			for (%\c) {
-			%\m sur_text -indent%
-			}
-		</text>
-	</p>
 	<p n="=surround_with_rvc">
 		<text>
-			std::reverse_copy(begin(%\m sur_text%), end(%\m sur_text%),
-			begin(%\c));
+			std::reverse_copy(begin(%\m sur_text%), end(%\m sur_text%), begin(%\c));
 		</text>
 	</p>
 	<p n="=surround_with_oit">
@@ -716,23 +400,9 @@
 			} );
 		</text>
 	</p>
-	<p n="=surround_with_dynamic_cast">
-		<text>
-			dynamic_cast&lt;%\c&gt;(%\m sur_text%)
-		</text>
-	</p>
-	<p n="=surround_with_#if...else">
-		<text>
-			%\m begin_line%#if %\c
-			%\m sur_text%
-			%\m begin_line%#else
-			%\m sur_text%
-			%\m begin_line%#endif
-		</text>
-	</p>
 	<p n="=surround_with_sth">
 		<text>
-			sort_heap(begin(%\m sur_text%), end(%\m sur_text%));
+			std::sort_heap(begin(%\m sur_text%), end(%\m sur_text%));
 		</text>
 	</p>
 	<p n="=surround_with_phh">
@@ -742,8 +412,8 @@
 	</p>
 	<p n="=surround_with_ffo">
 		<text>
-			auto pos = std::find_first_of(begin(%\m sur_text%),%\l end(%\m sur_text%),
-			  begin(%\c),%\l end(%\c));
+			auto pos = std::find_first_of(begin(%\m sur_text%), end(%\m sur_text%),
+			  begin(%\c), end(%\c));
 			if (pos != end(%\m sur_text%)) {
 			  %\c
 			}
@@ -767,41 +437,14 @@
 		<text>
 			if (std::is_partitioned(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
 			  %\c
-			  } ) ) {
+		  } ) ) {
 			  %\c
-			}
-		</text>
-	</p>
-	<p n="=surround_with_new_cpp_file">
-		<text>
-			#include &lt;iostream&gt;
-			%\l
-			using namespace std;
-			%\l
-			int main (int argc, char *argv[])
-			{
-			%\m sur_text -indent%
-			%\ireturn(0);
-			}
-		</text>
-	</p>
-	<p n="=surround_with_while">
-		<text>
-			while (%\c) {
-			%\m sur_text -indent%
 			}
 		</text>
 	</p>
 	<p n="=surround_with_mkh">
 		<text>
 			std::make_heap(begin(%\m sur_text%), end(%\m sur_text%));
-		</text>
-	</p>
-	<p n="=surround_with_try">
-		<text>
-			try {
-			%\m sur_text -indent%
-			}
 		</text>
 	</p>
 	<p n="=surround_with_fil">
@@ -811,8 +454,8 @@
 	</p>
 	<p n="=surround_with_fin">
 		<text>
-			auto pos = std::find_if_not(begin(%\m sur_text%),%\l end(%\m sur_text%),[](%\c) {
-			%\c
+			auto pos = std::find_if_not(begin(%\m sur_text%), end(%\m sur_text%),[](%\c) {
+	  		%\c
 			} );
 			if (pos != end(%\m sur_text%)) {
 			  %\c
@@ -821,8 +464,8 @@
 	</p>
 	<p n="=surround_with_lwr">
 		<text>
-			std::transform(begin(%\m sur_text%),%\l end(%\m sur_text%), begin(%\m sur_text%),%\l [](char c) {
-			return tolower(c); } );
+			std::transform(begin(%\m sur_text%), end(%\m sur_text%), begin(%\m sur_text%), [](char c) {
+			return std::tolower(c); } );
 		</text>
 	</p>
 	<p n="=surround_with_lxc">
@@ -833,24 +476,16 @@
 			}
 		</text>
 	</p>
-	<p n="=surround_with_if...else">
-		<text>
-			if (%\c) {
-			%\m sur_text -indent%
-			} else {
-			%\m sur_text -indent%
-			}
-		</text>
-	</p>
 	<p n="=surround_with_shf">
 		<text>
-			random_shuffle(begin(%\m sur_text%), end(%\m sur_text%));
+			std::random_shuffle(begin(%\m sur_text%), end(%\m sur_text%));
 		</text>
 	</p>
 	<p n="=surround_with_ajf">
 		<text>
 			auto pos = std::adjacent_find(begin(%\m sur_text%), end(%\m sur_text%));
-			%\cif (pos != end(%\m sur_text%)) {
+			if (pos != end(%\m sur_text%)) {
+        %\c
 			}
 		</text>
 	</p>
@@ -862,24 +497,32 @@
 	<p n="=surround_with_gnn">
 		<text>
 			std::generate_n(begin(%\m sur_text%), %\c, [](%\c) {
-			%\c
+			  %\c
 			} );
-		</text>
-	</p>
-	<p n="=surround_with_if_condition">
-		<text>
-			if (%\m sur_text -stripend ;%) {
-			%\i%\c
-			}
 		</text>
 	</p>
 	<p n="=surround_with_nno">
 		<text>
 			if (std::none_of(begin(%\m sur_text%), end(%\m sur_text%), [](%\c) {
 			  %\c
-			  } ) ) {
+  	  } ) ) {
 			  %\c
 			}
+		</text>
+	</p>
+	<p n="sti">
+		<text>
+			std::cin &gt;&gt; %\c
+		</text>
+	</p>
+	<p n="sto">
+		<text>
+			std::cout &lt;&lt; %\c
+		</text>
+	</p>
+	<p n="stv">
+		<text>
+			std::vector&lt;%\c&gt; %\c 
 		</text>
 	</p>
 </profile>
