@@ -24,14 +24,14 @@ In this example, let’s use the STL algorithm **std::count_if**.  The algorithm
 
 
 ```
-  vector<int> v;
+  std::vector<int> v;
   v<cursor-here>
 ```
 
 followed by **cni**:
 
 ```
-  vector<int> v;
+  std::vector<int> v;
   vcni<cursor-here>
 ```
 
@@ -39,7 +39,7 @@ the editor would then recognize this sequence and expand to:
 
 
 ```
-  vector<int> v;
+  std::vector<int> v;
   auto n = std::count_if( begin( v ), end( v ), []( <placeholder> ) {
     <placeholder>
   } ); 
