@@ -65,11 +65,12 @@ The video I used in the presentation was made using [SlickEdit](http://www.slick
 
 I couldn’t find a facility in vim to implement algorithm mnemonics.  I had to implement a suitable facility myself.  It doesn’t support tabbing through the _placeholders_.  It only expands the algorithm.  You have to use your vim nimbleness to navigate and fill out the algorithm.
 
-In vim, you type the container, _Control-K_, followed by the mnemonic and it expands.  There are currently some issues with the implementation, it works, just not 100%.
+In vim, you type the container, _Control-K_, followed by the mnemonic and it expands.
 
 ## Emacs
 
-Someone is currently implementing a version for Emacs.  Watch here for updates.
+Created by [Ludwig Pacifici](https://github.com/ludwigpacifici) the repository 
+[algorithm-mnemonics-emacs](https://github.com/ludwigpacifici/algorithm-mnemonics-emacs) contains a version for Emacs that utilizes [YASnippet](https://github.com/joaotavora/yasnippet) to implement the [algorithm-mnemonics](https://github.com/tommybennett/algorithm-mnemonics).
 
 ## End
 
