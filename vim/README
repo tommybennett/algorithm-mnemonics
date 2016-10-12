@@ -1,3 +1,7 @@
+# Algorithm Mnemonics
+
+## vim
+
 Place these files in $HOME/.vim/ftplugin/cpp
 
 Add the line:
