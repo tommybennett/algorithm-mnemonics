@@ -32,7 +32,7 @@ function Iab(ab, full)
 endfunction
 
 function Cpp_BeginEnd( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! iauto pos = \<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa));\<esc>"
   execute "normal! oif (pos != end(\<esc>\"upa)) {\<cr>}\<esc>"
@@ -40,7 +40,7 @@ function Cpp_BeginEnd( func )
 endfunction
 
 function Cpp_BeginEndNoIf( func, return_variable )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   let @v = a:return_variable
   execute "normal! iauto \<esc>\"vpa = \<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa));\<esc>"
@@ -48,14 +48,14 @@ function Cpp_BeginEndNoIf( func, return_variable )
 endfunction
 
 function Cpp_BeginEndNoReturn( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa));\<esc>"
   execute "normal! 0w"
 endfunction
 
 function Cpp_BeginEndUnary( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i []() {\<cr>});\<esc>04x"
@@ -63,7 +63,7 @@ function Cpp_BeginEndUnary( func )
 endfunction
 
 function Cpp_BeginEndUnaryNoReturn( func )
-  execute "normal! \<esc>\"udwi  \<esc>"
+  execute "normal! b\<esc>\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i [](#) {\<cr>"
@@ -71,7 +71,7 @@ function Cpp_BeginEndUnaryNoReturn( func )
 endfunction
 
 function Cpp_BeginEndUnaryNoIf( func, value )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   let @v = a:value
   execute "normal! iauto \<esc>\"vpa = \<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
@@ -80,14 +80,14 @@ function Cpp_BeginEndUnaryNoIf( func, value )
 endfunction
 
 function Cpp_IfBeginEnd( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! iif (\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa))) {\<cr>}"
   execute "normal! k"
 endfunction
 
 function Cpp_IfBeginEndUnary( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! iif (\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i [](#) {\<cr>"
@@ -95,7 +95,7 @@ function Cpp_IfBeginEndUnary( func )
 endfunction
 
 function Cpp_BeginEndValue( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! iauto pos = \<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), );\<esc>"
   execute "normal! oif (pos != end(\<esc>\"upa)) {\<cr>}\<esc>"
@@ -103,7 +103,7 @@ function Cpp_BeginEndValue( func )
 endfunction
 
 function Cpp_BeginEndValueReturnValue( func, value )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   let @v = a:value
   execute "normal! iauto \<esc>\"vpa = \<esc>\"fpa(begin(\<esc>\"upa), "
@@ -112,7 +112,7 @@ function Cpp_BeginEndValueReturnValue( func, value )
 endfunction
 
 function Cpp_AccumulateWithLambda( func, value )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   let @v = a:value
   execute "normal! iauto \<esc>\"vpa = \<esc>\"fpa(begin(\<esc>\"upa), "
@@ -121,35 +121,35 @@ function Cpp_AccumulateWithLambda( func, value )
 endfunction
 
 function Cpp_BeginEndValueNoReturn( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), );\<esc>"
   execute "normal! F,"
 endfunction
 
 function Cpp_BeginEndOldValueNewValue( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), old_value, new_value );\<esc>"
   execute "normal! Fo"
 endfunction
 
 function Cpp_BeginEndUnaryValue( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), [](#) {\<cr>}, );\<esc>"
   execute "normal! 04xk0f#x"
 endfunction
 
 function Cpp_BeginEndBeginOldValueNewValue( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), begin(\<esc>\"upa), old_value, new_value);\<esc>"
   execute "normal! Fo"
 endfunction
 
 function Cpp_BeginEndBeginUnaryValue( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(\<esc>\"upa), [](#) {\<cr>}, );\<esc>"
@@ -157,7 +157,7 @@ function Cpp_BeginEndBeginUnaryValue( func )
 endfunction
 
 function Cpp_IfBeginEndBeginEnd( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! iif (\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(#), end())) {\<cr>}"
@@ -165,35 +165,35 @@ function Cpp_IfBeginEndBeginEnd( func )
 endfunction
 
 function Cpp_BeginEndEnd( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), end(\<esc>\"upa));"
   execute "normal! 0w"
 endfunction
 
 function Cpp_BeginEndBegin( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), begin(#));\<esc>"
   execute "normal! 0f#x"
 endfunction
 
 function Cpp_BeginBeginEnd( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), begin(\<esc>\"upa), end(#));"
   execute "normal! 0f#x"
 endfunction
 
 function Cpp_BeginEndBeginValue( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), begin(#), );"
   execute "normal! 0f#x"
 endfunction
 
 function Cpp_BeginEndBeginUnary( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), begin(#), "
   execute "normal! i []() {\<cr>"
@@ -201,7 +201,7 @@ function Cpp_BeginEndBeginUnary( func )
 endfunction
 
 function Cpp_BeginEndBeginEnd( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(#), end());"
@@ -209,7 +209,7 @@ function Cpp_BeginEndBeginEnd( func )
 endfunction
 
 function Cpp_BeginEndBeginEndUnary( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(#), end(), []() {\<cr>});"
@@ -217,7 +217,7 @@ function Cpp_BeginEndBeginEndUnary( func )
 endfunction
 
 function Cpp_BeginEndBeginEndBegin( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(#), end(), begin());"
@@ -225,7 +225,7 @@ function Cpp_BeginEndBeginEndBegin( func )
 endfunction
 
 function Cpp_BeginBeginEndBegin( func )
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), begin(#), \<cr> "
   execute "normal! iend(\<esc>\"upa), begin() ); "
@@ -233,7 +233,7 @@ function Cpp_BeginBeginEndBegin( func )
 endfunction
 
 function Cpp_IteratorValueIterator( func, it1, value, it2 ) 
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @i = a:it1
   let @j = a:it2
   let @f = a:func
@@ -243,14 +243,14 @@ function Cpp_IteratorValueIterator( func, it1, value, it2 )
 endfunction
 
 function Cpp_BeginSizeValue( func ) 
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), \<esc>\"upa.size(), );\<esc>"
   execute "normal! F,"
 endfunction
 
 function Cpp_BeginSizeFunc( func ) 
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   let @f = a:func
   execute "normal! i\<esc>\"fpa(begin(\<esc>\"upa), \<esc>\"upa.size(), "
   execute "normal! i []() {\<cr>"
@@ -267,7 +267,7 @@ function Cpp_LambdaMultiLine()
 endfunction
 
 function Cpp_FindEnd()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! iauto pos = find_end(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(#), end() );\<esc>0"
   execute "normal! oif (pos != end(\<esc>pa)) {\<cr>}\<esc>"
@@ -275,7 +275,7 @@ function Cpp_FindEnd()
 endfunction
 
 function Cpp_Search()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! iauto pos = search(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(#), end() );\<esc>0"
   execute "normal! oif (pos != end(\<esc>pa)) {\<cr>}\<esc>"
@@ -283,7 +283,7 @@ function Cpp_Search()
 endfunction
 
 function Cpp_SearchN()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! iauto pos = search_n(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i #, );\<esc>0"
   execute "normal! oif (pos != end(\<esc>pa)) {\<cr>}\<esc>"
@@ -291,7 +291,7 @@ function Cpp_SearchN()
 endfunction
 
 function Cpp_FindFirstOf()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! iauto pos = find_first_of(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(#), end() );\<esc>0"
   execute "normal! oif (pos != end(\<esc>pa)) {\<cr>}\<esc>"
@@ -299,26 +299,26 @@ function Cpp_FindFirstOf()
 endfunction
 
 function Cpp_AdjacentFind()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! iauto pos = adjacent_find(begin(\<esc>\"upa), end(\<esc>\"upa));\<esc>"
   execute "normal! oif (pos != end(\<esc>\"upa)) {\<cr>}\<esc>"
   execute "normal! k0w"
 endfunction
 
 function Cpp_Equal()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! iif (equal(begin(\<esc>\"upa), end(\<esc>\"upa), \<esc>"
   execute "normal! i begin(\<esc>\"upa))) {\<cr>}\<esc>k"
 endfunction
 
 function Cpp_IsPermutation()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! iif (is_permutation(begin(\<esc>\"upa), end(\<esc>\"upa), \<esc>"
   execute "normal! i begin(\<esc>\"upa))) {\<cr>}\<esc>k"
 endfunction
 
 function Cpp_Mismatch()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! iauto values = mismatch(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i begin(\<esc>\"upa));\<esc>0"
   execute "normal! oif (values.first == end(\<esc>pa)) {\<cr>} else {\<cr>}"
@@ -326,7 +326,7 @@ function Cpp_Mismatch()
 endfunction
 
 function Cpp_UniqueCopy()
-  execute "normal! \<esc>\"udwi \<esc>"
+  execute "normal! \<esc>b\"udwi \<esc>"
   execute "normal! i unique_copy(begin(\<esc>pa), end(\<esc>pa),\<cr>"
   execute "normal! i              ostream_iterator<#>(cout, \"\\n\"));"
   execute "normal! 0f#x"
@@ -337,7 +337,7 @@ function Cpp_MakeTransform( source, destination, elemtype, statement )
 endfunction 
 
 function Cpp_StreamOutput()
-  execute "normal! \"udwi  \<esc>"
+  execute "normal! b\"udwi  \<esc>"
   execute "normal! icopy(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i ostream_iterator<#>{\<cr>    cout, \"\"\<cr>});"
   execute "normal! 05x2kf#x"
@@ -359,12 +359,12 @@ function Cpp_ToLower()
 endfunction
 
 function Cpp_LeftTrim()
-  execute "normal! \<esc>\"udwi \<esc>"
+  execute "normal! \<esc>b\"udwi \<esc>"
   execute "normal! i  \<esc>\"uPa.erase(0, \<esc>\"upa.find_first_not_of(\" \\t\\n\\r\"));"
 endfunction
 
 function Cpp_RightTrim()
-  execute "normal! \<esc>\"udwi \<esc>"
+  execute "normal! \<esc>b\"udwi \<esc>"
   execute "normal! i  \<esc>\"uPa.erase(\<esc>\"upa.find_last_not_of(\" \\t\\n\\r\")+1);"
 endfunction
 
