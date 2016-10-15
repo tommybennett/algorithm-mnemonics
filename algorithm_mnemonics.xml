@@ -138,7 +138,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			std::replace(std::begin(%\m C%), std::end(%\m C%), %\c, %\c);
 		</text>
 	</p>
-	<p n="erm" en="remove">
+	<p n="erm" en="erase">
 		<text>
 			%\m C%.erase(std::remove(std::begin(%\m C%), std::end(%\m C%), %\c), std::end(%\m C%));
 		</text>
@@ -172,12 +172,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			}
 		</text>
 	</p>
-	<p n="ltr" en="transform">
+	<p n="ltr" en="string_trim_left">
 		<text>
 			%\m C%.erase(0, %\m C%.find_first_not_of(" \t\n\r"));
 		</text>
 	</p>
-	<p n="upr" en="transform">
+	<p n="upr" en="string_upper">
 		<text>
 			std::transform(std::begin(%\m C%), std::end(%\m C%), std::begin(%\m C%), [](char c) {
 			return std::toupper(c);
@@ -299,11 +299,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			} else {
 			  %\c
 			}
-		</text>
-	</p>
-	<p n="mpb" en="move_backward">
-		<text>
-			std::move_backward(std::begin(%\m C%), std::end(%\m C%), std::end(%\m C%));
 		</text>
 	</p>
 	<p n="ptc" en="partition_copy">
@@ -521,7 +516,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			}
 		</text>
 	</p>
-	<p n="lwr" en="transform">
+	<p n="lwr" en="string_lower">
 		<text>
 			std::transform(std::begin(%\m C%), std::end(%\m C%), std::begin(%\m C%), [](char c) {
 			return std::tolower(c); });
@@ -548,7 +543,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			}
 		</text>
 	</p>
-	<p n="trm" en="generate_n">
+	<p n="trm" en="string_trim_right">
 		<text>
 			%\m C%.erase(%\m C%.find_last_not_of(" \t\n\r") + 1);
 		</text>
@@ -587,7 +582,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			if (std::includes(std::begin(%\m C%), std::end(%\m C%),
 			  std::begin(%\c), std::end(%\c))) {
 			    %\c
-            }
+			}
 		</text>
 	</p>
 	<p n="lwb" en="lower_bound">
@@ -623,7 +618,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			  std::begin(%\c), std::end(%\c), std::begin(%\c));
 		</text>
 	</p>
-	<p n="sti" en="set_intersection">
+	<p n="stn" en="set_intersection">
 		<text>
 			auto pos = std::set_intersection(std::begin(%\m C%), std::end(%\m C%),
 			  std::begin(%\c), std::end(%\c), std::begin(%\c));
@@ -638,7 +633,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<p n="ssd" en="set_symmetric_difference">
 		<text>
 			auto pos = std::set_symmetric_difference(std::begin(%\m C%),
- 			  std::end(%\m C%), std::begin(%\c), std::end(%\c), std::begin(%\c));
+			  std::end(%\m C%), std::begin(%\c), std::end(%\c), std::begin(%\c));
 		</text>
 	</p>
 	<p n="ipm" en="inplace_merge">
