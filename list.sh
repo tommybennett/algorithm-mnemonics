@@ -134,7 +134,7 @@ function print_all_with_category() {
     echo
     for n in ${EXPANDEDNAME[$i]}
     do
-      echo $n
+      echo "$n  "
     done
     echo
   done
