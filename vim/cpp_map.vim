@@ -55,12 +55,13 @@ inoremap <C-k>bns <esc>:call Cpp_BeginEndValue( "binary_search" )<cr>a
 inoremap <C-k>inc <esc>:call Cpp_BeginEndBeginEnd( "includes" )<cr>i
 inoremap <C-k>lwb <esc>:call Cpp_BeginEndValue( "lower_bound" )<cr>a 
 inoremap <C-k>upb <esc>:call Cpp_BeginEndValue( "upper_bound" )<cr>a 
-inoremap <C-k>eqr <esc>:call Cpp_BeginEndValue( "equal_range" )<cr>a 
+inoremap <C-k>eqr <esc>:call Cpp_BeginEndValueNoIf( "equal_range", "bounds" )<cr>a
+inoremap <C-k>erl <esc>:call Cpp_BeginEndValueUnaryNoIf( "equal_range", "bounds" )<cr>a
 inoremap <C-k>mrg <esc>:call Cpp_BeginEndBeginEndBegin( "merge" )<cr>i
-inoremap <C-k>stu <esc>:call Cpp_BeginEndBeginEndBegin( "set_union" )<cr>i
-inoremap <C-k>sti <esc>:call Cpp_BeginEndBeginEndBegin( "set_intersection" )<cr>i
-inoremap <C-k>std <esc>:call Cpp_BeginEndBeginEndBegin( "set_difference" )<cr>i
-inoremap <C-k>ssd <esc>:call Cpp_BeginEndBeginEndBegin( "set_symmetric_difference" )<cr>i
+inoremap <C-k>stu <esc>:call Cpp_SetAlgorithm( "set_union" )<cr>i
+inoremap <C-k>sti <esc>:call Cpp_SetAlgorithm( "set_intersection" )<cr>i
+inoremap <C-k>std <esc>:call Cpp_SetAlgorithm( "set_difference" )<cr>i
+inoremap <C-k>ssd <esc>:call Cpp_SetAlgorithm( "set_symmetric_difference" )<cr>i
 inoremap <C-k>ipm <esc>:call Cpp_BeginEndEnd( "inplace_merge" )<cr>
 inoremap <C-k>ucp <esc>:call Cpp_UniqueCopy()<cr>i
 
@@ -82,6 +83,7 @@ inoremap <C-k>rpi <esc>:call Cpp_BeginEndUnaryValue( "replace_if" )<cr>i
 inoremap <C-k>rpc <esc>:call Cpp_BeginEndBeginOldValueNewValue( "replace_copy" )<cr>
 inoremap <C-k>rci <esc>:call Cpp_BeginEndBeginUnaryValue( "replace_copy_if" )<cr>i
 inoremap <C-k>ita <esc>:call Cpp_BeginEndValueNoReturn( "iota" )<cr>a 
+inoremap <C-k>swp <esc>:call Cpp_Swap()<cr>a
 
 " Removing algorithms
 inoremap <C-k>rmv <esc>:call Cpp_BeginEndValue( "remove" )<cr>a 

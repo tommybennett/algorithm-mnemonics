@@ -65,9 +65,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="acl" en="accumulate">
 		<text>
-			auto sum = std::accumulate( std::begin(%\m C%), std::end(%\m C%), 0, [](int total, %\c) {
+			auto sum = std::accumulate(std::begin(%\m C%), std::end(%\m C%), 0, [](int total, %\c) {
 			  %\c
-			} );
+			});
 		</text>
 	</p>
 	<p n="eql" en="equal">
@@ -140,7 +140,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="erm" en="remove">
 		<text>
-			%\m C%.erase( std::remove( std::begin(%\m C%), std::end(%\m C%), %\c ), std::end(%\m C%) );
+			%\m C%.erase(std::remove(std::begin(%\m C%), std::end(%\m C%), %\c), std::end(%\m C%));
 		</text>
 	</p>
 	<p n="tfm" en="transform">
@@ -148,19 +148,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			std::transform(std::begin(%\m C%), std::end(%\m C%),
 			  std::begin(%\m C%), [](%\c) {
 			%\c%
-			} );
+			});
 		</text>
 	</p>
 	<p n="fln" en="fill_n">
 		<text>
-			std::fill_n(std::begin(%\m C%), %\c, %\c );
+			std::fill_n(std::begin(%\m C%), %\c, %\c);
 		</text>
 	</p>
 	<p n="alo" en="all_of">
 		<text>
 			if (std::all_of(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
-			} ) ) {
+			})) {
 			  %\c
 			}
 		</text>
@@ -181,7 +181,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<text>
 			std::transform(std::begin(%\m C%), std::end(%\m C%), std::begin(%\m C%), [](char c) {
 			return std::toupper(c);
-			} );
+			});
 			%\c
 		</text>
 	</p>
@@ -195,7 +195,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<text>
 			auto pos = std::partition_point(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
-			} );
+			});
 			if (pos != std::end(%\m C%)) {
 			  %\c
 			}
@@ -262,7 +262,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			std::copy_if(std::begin(%\m C%), std::end(%\m C%), std::begin(%\c),
 			[](%\c) {
 			  %\c
-			} );
+			});
 		</text>
 	</p>
 	<p n="cni" en="count_if">
@@ -327,9 +327,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="fre" en="for_each">
 		<text>
-			std::for_each( std::begin(%\m C%), std::end(%\m C%), [](%\c) {
+			std::for_each(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
-			} );
+			});
 		</text>
 	</p>
 	<p n="mne" en="min_element">
@@ -363,7 +363,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="fni" en="find_if">
 		<text>
-			auto pos = std::find_if(std::begin(%\m C%), std::end(%\m C%), []( %\c ) {
+			auto pos = std::find_if(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
 			});
 			if (pos != std::end(%\m C%)) {
@@ -393,7 +393,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<text>
 			if (std::any_of(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
-			} ) ) {
+			})) {
 			  %\c
 			}
 		</text>
@@ -423,10 +423,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="rmf" en="remove_copy_if">
 		<text>
-			std::remove_copy_if( std::begin(%\m C%), std::end(%\m C%),
+			std::remove_copy_if(std::begin(%\m C%), std::end(%\m C%),
 			  std::begin(%\m C%), [](%\c) {
 			    %\c
-			} );
+			});
 		</text>
 	</p>
 	<p n="rci" en="replace_copy_if">
@@ -434,14 +434,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			std::replace_copy_if(std::begin(%\m C%), std::end(%\m C%),
 			  std::begin(%\m C%), [](%\c) {
 			  %\c
-			  }, %\c );
+			  }, %\c);
 		</text>
 	</p>
 	<p n="rmi" en="remove_if">
 		<text>
-			auto pos = std::remove_if( std::begin(%\m C%), std::end(%\m C%), [](%\c) {
+			auto pos = std::remove_if(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
-			} );
+			});
 			if (pos != std::end(%\m C%)) {
 			  %\c
 			}
@@ -454,9 +454,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="oit" en="copy">
 		<text>
-			std::copy( std::begin( %\m C% ), std::end( %\m C% ), std::ostream_iterator&lt;%\c&gt;{
+			std::copy(std::begin(%\m C%), std::end(%\m C%), std::ostream_iterator&lt;%\c&gt;{
 			%\istd::cout, "%\c"
-			} );
+			});
 		</text>
 	</p>
 	<p n="sth" en="sort_heap">
@@ -482,7 +482,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<text>
 			std::generate(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
-			} );
+			});
 		</text>
 	</p>
 	<p n="ipr" en="is_permutation">
@@ -496,7 +496,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<text>
 			if (std::is_partitioned(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
-			  } ) ) {
+			  })) {
 			  %\c
 			}
 		</text>
@@ -515,7 +515,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<text>
 			auto pos = std::find_if_not(std::begin(%\m C%), std::end(%\m C%),[](%\c) {
 			  %\c
-			} );
+			});
 			if (pos != std::end(%\m C%)) {
 			  %\c
 			}
@@ -524,7 +524,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<p n="lwr" en="transform">
 		<text>
 			std::transform(std::begin(%\m C%), std::end(%\m C%), std::begin(%\m C%), [](char c) {
-			return std::tolower(c); } );
+			return std::tolower(c); });
 		</text>
 	</p>
 	<p n="lxc" en="lexigraphical_compare">
@@ -557,16 +557,107 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<text>
 			std::generate_n(std::begin(%\m C%), %\c, [](%\c) {
 			  %\c
-			} );
+			});
 		</text>
 	</p>
 	<p n="nno" en="none_of">
 		<text>
 			if (std::none_of(std::begin(%\m C%), std::end(%\m C%), [](%\c) {
 			  %\c
-			} ) ) {
+			})) {
 			  %\c
 			}
+		</text>
+	</p>
+	<p n="pph" en="pop_heap">
+		<text>
+			std::pop_heap(std::begin(%\m C%), std::end(%\m C%));
+		</text>
+	</p>
+	<p n="bns" en="binary_search">
+		<text>
+			auto pos = std::binary_search(std::begin(%\m C%), std::end(%\m C%), %\c);
+			if (pos != std::end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="inc" en="includes">
+		<text>
+      if (std::includes(std::begin(%\m C%), std::end(%\m C%), std::begin(%\c), std::end(%\c))) {
+			  %\c
+      }
+		</text>
+	</p>
+	<p n="lwb" en="lower_bound">
+		<text>
+			auto pos = std::lower_bound(std::begin(%\m C%), std::end(%\m C%), %\c);
+			if (pos != std::end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="upb" en="upper_bound">
+		<text>
+			auto pos = std::upper_bound(std::begin(%\m C%), std::end(%\m C%), %\c);
+			if (pos != std::end(%\m C%)) {
+			  %\c
+			}
+		</text>
+	</p>
+	<p n="eqr" en="equal_range">
+		<text>
+			auto bounds = std::equal_range(std::begin(%\m C%), std::end(%\m C%), %\c);
+		</text>
+	</p>
+	<p n="erl" en="equal_range">
+		<text>
+      auto bounds = std::equal_range(std::begin(%\m C%), std::end(%\m C%), %\c,
+        [](%\c,%\c) { %\c });
+		</text>
+	</p>
+	<p n="stu" en="set_union">
+		<text>
+      auto pos = std::set_union(std::begin(%\m C%), std::end(%\m C%),
+      std::begin(%\c), std::end(%\c), std::begin(%\c));
+		</text>
+	</p>
+	<p n="sti" en="set_intersection">
+		<text>
+      auto pos = std::set_intersection(std::begin(%\m C%), std::end(%\m C%),
+      std::begin(%\c), std::end(%\c), std::begin(%\c));
+		</text>
+	</p>
+	<p n="std" en="set_difference">
+		<text>
+      auto pos = std::set_difference(std::begin(%\m C%), std::end(%\m C%),
+      std::begin(%\c), std::end(%\c), std::begin(%\c));
+		</text>
+	</p>
+	<p n="ssd" en="set_symmetric_difference">
+		<text>
+      auto pos = std::set_symmetric_difference(std::begin(%\m C%),
+      std::end(%\m C%), std::begin(%\c), std::end(%\c), std::begin(%\c));
+		</text>
+	</p>
+	<p n="ipm" en="inplace_merge">
+		<text>
+			std::inplace_merge(std::begin(%\m C%), std::end(%\m C%), std::end(%\m C%));
+		</text>
+	</p>
+	<p n="mov" en="move">
+		<text>
+			std::move(std::begin(%\m C%), std::end(%\m C%), std::begin(%\m C%));
+		</text>
+	</p>
+	<p n="mvb" en="move_backward">
+		<text>
+			std::move_backward(std::begin(%\m C%), std::end(%\m C%), std::end(%\m C%));
+		</text>
+	</p>
+	<p n="swp" en="swap">
+		<text>
+			std::swap(%\m C%, %\c);
 		</text>
 	</p>
 </algorithm-mnemonics>

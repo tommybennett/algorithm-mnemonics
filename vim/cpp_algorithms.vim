@@ -102,6 +102,23 @@ function Cpp_BeginEndValue( func )
   execute "normal! 2k$F,"
 endfunction
 
+function Cpp_BeginEndValueNoIf( func, return_value )
+  execute "normal! b\"udwi  \<esc>"
+  let @f = a:func
+  let @v = a:return_value
+  execute "normal! iauto \<esc>\"vpa = \<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), );\<esc>"
+  execute "normal! $F,"
+endfunction
+
+function Cpp_BeginEndValueUnaryNoIf( func, return_value )
+  execute "normal! b\"udwi  \<esc>"
+  let @f = a:func
+  let @v = a:return_value
+  execute "normal! iauto \<esc>\"vpa = \<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
+  execute "normal! i, [](,) {\<cr>});\<esc>04x"
+  execute "normal! k$3F,"
+endfunction
+
 function Cpp_BeginEndValueReturnValue( func, value )
   execute "normal! b\"udwi  \<esc>"
   let @f = a:func
@@ -336,11 +353,25 @@ function Cpp_MakeTransform( source, destination, elemtype, statement )
   call setline( ".", "  transform(begin(" . a:source . "), end(" . a:source . "), begin(" . a:source . "), []( ". a:elemtype . ") { " . a:statement . " });" )
 endfunction 
 
+function Cpp_SetAlgorithm( func )
+  execute "normal! b\"udwi  \<esc>"
+  let @f = a:func
+  execute "normal! iauto pos = \<esc>\"fpa(begin(\<esc>\"upa), end(\<esc>\"upa), "
+  execute "normal! i begin(#), end(), begin());"
+  execute "normal! 0f#x"
+endfunction
+
 function Cpp_StreamOutput()
   execute "normal! b\"udwi  \<esc>"
   execute "normal! icopy(begin(\<esc>\"upa), end(\<esc>\"upa), "
   execute "normal! i ostream_iterator<#>{\<cr>    cout, \"\"\<cr>});"
   execute "normal! 05x2kf#x"
+endfunction
+
+function Cpp_Swap()
+  execute "normal! \<esc>b\"udwi \<esc>"
+  execute "normal! i swap(\<esc>pa, );" 
+  execute "normal! $F,l" 
 endfunction
 
 function Cpp_Transform()
