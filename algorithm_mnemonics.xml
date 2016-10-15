@@ -584,8 +584,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="inc" en="includes">
 		<text>
-            if (std::includes(std::begin(%\m C%), std::end(%\m C%),
-              std::begin(%\c), std::end(%\c))) {
+			if (std::includes(std::begin(%\m C%), std::end(%\m C%),
+			  std::begin(%\c), std::end(%\c))) {
 			    %\c
             }
 		</text>
@@ -613,32 +613,32 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</p>
 	<p n="erl" en="equal_range">
 		<text>
-            auto bounds = std::equal_range(std::begin(%\m C%), std::end(%\m C%), %\c,
-              [](%\c,%\c) { %\c });
+			auto bounds = std::equal_range(std::begin(%\m C%), std::end(%\m C%), %\c,
+			  [](%\c,%\c) { %\c });
 		</text>
 	</p>
 	<p n="stu" en="set_union">
 		<text>
-            auto pos = std::set_union(std::begin(%\m C%), std::end(%\m C%),
-              std::begin(%\c), std::end(%\c), std::begin(%\c));
+			auto pos = std::set_union(std::begin(%\m C%), std::end(%\m C%),
+			  std::begin(%\c), std::end(%\c), std::begin(%\c));
 		</text>
 	</p>
 	<p n="sti" en="set_intersection">
 		<text>
-            auto pos = std::set_intersection(std::begin(%\m C%), std::end(%\m C%),
-              std::begin(%\c), std::end(%\c), std::begin(%\c));
+			auto pos = std::set_intersection(std::begin(%\m C%), std::end(%\m C%),
+			  std::begin(%\c), std::end(%\c), std::begin(%\c));
 		</text>
 	</p>
 	<p n="std" en="set_difference">
 		<text>
-            auto pos = std::set_difference(std::begin(%\m C%), std::end(%\m C%),
-              std::begin(%\c), std::end(%\c), std::begin(%\c));
+			auto pos = std::set_difference(std::begin(%\m C%), std::end(%\m C%),
+			  std::begin(%\c), std::end(%\c), std::begin(%\c));
 		</text>
 	</p>
 	<p n="ssd" en="set_symmetric_difference">
 		<text>
-            auto pos = std::set_symmetric_difference(std::begin(%\m C%),
-              std::end(%\m C%), std::begin(%\c), std::end(%\c), std::begin(%\c));
+			auto pos = std::set_symmetric_difference(std::begin(%\m C%),
+ 			  std::end(%\m C%), std::begin(%\c), std::end(%\c), std::begin(%\c));
 		</text>
 	</p>
 	<p n="ipm" en="inplace_merge">
