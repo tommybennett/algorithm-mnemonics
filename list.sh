@@ -73,7 +73,7 @@ function create_name() {
   NAME[$STRINGS]="ltr:trm:lwr:upr"
   NAME[$STREAMS]="sto:sti:oit"
   NAME[$IDIOMS]="erm"
-  NAME[$CONTAINERS]="stm:stv"
+  NAME[$CONTAINERS]="stv"
 }
 
 # Create the expanded name array 
