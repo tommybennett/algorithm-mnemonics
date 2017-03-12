@@ -73,6 +73,10 @@ I created a facility for vim available in the vim directory [algorithm-mnemonics
 Created by [Ludwig Pacifici](https://github.com/ludwigpacifici) the repository 
 [algorithm-mnemonics-emacs](https://github.com/ludwigpacifici/algorithm-mnemonics-emacs) contains a version for Emacs that utilizes [YASnippet](https://github.com/joaotavora/yasnippet) to implement the [algorithm-mnemonics](https://github.com/tommybennett/algorithm-mnemonics).
 
+## Visual Studio
+
+There is a version available for Visual Studio at tinyurl.com/z3nb6zx
+
 ## End
 
 Once you have added this to your editor, I suggest you go through each algorithm, use it in a real working example, or unit test.  Going through each algorithm will _tattoo_ the mnemonics and STL algorithms on your brain.  You will then be able to _summon_ them at will. 
