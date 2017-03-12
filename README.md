@@ -75,7 +75,7 @@ Created by [Ludwig Pacifici](https://github.com/ludwigpacifici) the repository
 
 ## Visual Studio
 
-There is a version available for Visual Studio at tinyurl.com/z3nb6zx
+There is a version available for [Visual Studio](https://tinyurl.com/z3nb6zx) at [https://tinyurl.com/z3nb6zx](https://tinyurl.com/z3nb6zx)
 
 ## End
 
