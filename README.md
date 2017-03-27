@@ -73,9 +73,9 @@ I created a facility for vim available in the vim directory [algorithm-mnemonics
 Created by [Ludwig Pacifici](https://github.com/ludwigpacifici) the repository 
 [algorithm-mnemonics-emacs](https://github.com/ludwigpacifici/algorithm-mnemonics-emacs) contains a version for Emacs that utilizes [YASnippet](https://github.com/joaotavora/yasnippet) to implement the [algorithm-mnemonics](https://github.com/tommybennett/algorithm-mnemonics).
 
-## Visual Studio
+## Visual Studio Code
 
-There is a version available for [Visual Studio](https://tinyurl.com/z3nb6zx) at [https://tinyurl.com/z3nb6zx](https://tinyurl.com/z3nb6zx)
+Created by [David Brötje](https://github.com/davidbroetje) the repository [algorithm-mnemonics-vscode](https://github.com/davidbroetje/algorithm-mnemonics-vscode) contains a version for the [Visual Studio Code](https://code.visualstudio.com) editor.
 
 ## End
 
