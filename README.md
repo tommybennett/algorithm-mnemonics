@@ -77,6 +77,12 @@ Created by [Ludwig Pacifici](https://github.com/ludwigpacifici) the repository
 
 Created by [David Brötje](https://github.com/davidbroetje) the repository [algorithm-mnemonics-vscode](https://github.com/davidbroetje/algorithm-mnemonics-vscode) contains a version for the [Visual Studio Code](https://code.visualstudio.com) editor.
 
+## QtCreator 
+
+Created by [Vahid Dzanic](https://github.com/vahid-dzanic) the directory [QtCreator](https://github.com/tommybennett/algorithm-mnemonics/QtCreator) contains a version for the [QtCreator](https://www.qt.io/ide) development environment.
+
+![QtCreator Demonstration](https://github.com/tommybennett/algorithm-mnemonics/blob/master/QtCreator/QtCreator.png)
+
 ## End
 
 Once you have added this to your editor, I suggest you go through each algorithm, use it in a real working example, or unit test.  Going through each algorithm will _tattoo_ the mnemonics and STL algorithms on your brain.  You will then be able to _summon_ them at will. 
