@@ -79,7 +79,7 @@ Created by [David Brötje](https://github.com/davidbroetje) the repository [algo
 
 ## QtCreator 
 
-Created by [Vahid Dzanic](https://github.com/vahid-dzanic) the directory [QtCreator](https://github.com/tommybennett/algorithm-mnemonics/QtCreator) contains a version for the [QtCreator](https://www.qt.io/ide) development environment.
+Created by [Vahid Dzanic](https://github.com/vahid-dzanic) the directory [algorithm-mnemonics/QtCreator](https://github.com/tommybennett/algorithm-mnemonics/tree/master/QtCreator) contains a version for the [QtCreator](https://www.qt.io/ide) development environment.
 
 ![QtCreator Demonstration](https://github.com/tommybennett/algorithm-mnemonics/blob/master/QtCreator/QtCreator.png)
 
