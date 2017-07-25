@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippets>
+	<snippet group="C++" trigger="ihp" id="" complement="is_heap" removed="false" modified="false">
+			if (std::is_heap(std::begin($container$), std::end($container$))) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="mme" id="" complement="minmax_element" removed="false" modified="false">
+			auto minmax = std::minmax_element(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="ihu" id="" complement="is_heap_until" removed="false" modified="false">
+			auto pos = std::is_heap_until(std::begin($container$), std::end($container$));
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="acl" id="" complement="accumulate" removed="false" modified="false">
+			auto sum = std::accumulate(std::begin($container$), std::end($container$), 0, [](int total, $$) {
+			  $$
+			});
+	</snippet>
+	<snippet group="C++" trigger="eql" id="" complement="equal" removed="false" modified="false">
+			if (std::equal(std::begin($container$), std::end($container$), std::begin($$))) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="acm" id="" complement="accumulate" removed="false" modified="false">
+			auto sum = std::accumulate(std::begin($container$), std::end($container$), 0);
+	</snippet>
+	<snippet group="C++" trigger="ucp" id="" complement="unique_copy" removed="false" modified="false">
+			std::unique_copy(std::begin($container$), std::end($container$),
+			  std::ostream_iterator&lt;string&gt;(std::cout, "\\n"));
+	</snippet>
+	<snippet group="C++" trigger="ita" id="" complement="iota" removed="false" modified="false">
+			std::iota(std::begin($container$), std::end($container$), $$);
+	</snippet>
+	<snippet group="C++" trigger="iss" id="" complement="is_sorted" removed="false" modified="false">
+			if (std::is_sorted(std::begin($container$), std::end($container$))) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="rpc" id="" complement="replace_copy" removed="false" modified="false">
+			std::replace_copy(std::begin($container$), std::end($container$), std::begin($container$), $$, $$);
+	</snippet>
+	<snippet group="C++" trigger="isu" id="" complement="is_sorted_until" removed="false" modified="false">
+			auto pos = std::is_sorted_until(std::begin($container$), std::end($container$));
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="rmv" id="" complement="remove" removed="false" modified="false">
+			auto pos = std::remove(std::begin($container$), std::end($container$), $$);
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="nth" id="" complement="nth_element" removed="false" modified="false">
+			std::nth_element(std::begin($container$), std::end($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="rpi" id="" complement="replace_if" removed="false" modified="false">
+			std::replace_if(std::begin($container$), std::end($container$), []($$) {
+			$$
+			}, $$);
+	</snippet>
+	<snippet group="C++" trigger="rpl" id="" complement="replace" removed="false" modified="false">
+			std::replace(std::begin($container$), std::end($container$), $$, $$);
+	</snippet>
+	<snippet group="C++" trigger="erm" id="" complement="erase" removed="false" modified="false">
+			$container$.erase(std::remove(std::begin($container$), std::end($container$), $$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="tfm" id="" complement="transform" removed="false" modified="false">
+			std::transform(std::begin($container$), std::end($container$),
+			  std::begin($container$), []($$) {
+			$$%
+			});
+	</snippet>
+	<snippet group="C++" trigger="fln" id="" complement="fill_n" removed="false" modified="false">
+			std::fill_n(std::begin($container$), $$, $$);
+	</snippet>
+	<snippet group="C++" trigger="alo" id="" complement="all_of" removed="false" modified="false">
+			if (std::all_of(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			})) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="prp" id="" complement="prev_permutation" removed="false" modified="false">
+			if (std::prev_permutation(std::begin($container$), std::end($container$))) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="ltr" id="" complement="string_trim_left" removed="false" modified="false">
+			$container$.erase(0, $container$.find_first_not_of(" \\t\\n\\r"));
+	</snippet>
+	<snippet group="C++" trigger="upr" id="" complement="string_upper" removed="false" modified="false">
+			std::transform(std::begin($container$), std::end($container$), std::begin($container$), [](char c) {
+			return std::toupper(c);
+			});
+			$$
+	</snippet>
+	<snippet group="C++" trigger="psc" id="" complement="partial_sort_copy" removed="false" modified="false">
+			std::partial_sort_copy(std::begin($container$), std::end($container$),
+			                  std::begin($$), std::end($$));
+	</snippet>
+	<snippet group="C++" trigger="ppt" id="" complement="partition_point" removed="false" modified="false">
+			auto pos = std::partition_point(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			});
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="cnt" id="" complement="count" removed="false" modified="false">
+			auto n = std::count(std::begin($container$), std::end($container$), $$);
+	</snippet>
+	<snippet group="C++" trigger="uqe" id="" complement="unique" removed="false" modified="false">
+			auto pos = std::unique(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="sti" id="" complement="cin" removed="false" modified="false">
+			std::cin &gt;&gt;
+	</snippet>
+	<snippet group="C++" trigger="cpy" id="" complement="copy" removed="false" modified="false">
+			std::copy(std::begin($container$), std::end($container$), std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="sto" id="" complement="cout" removed="false" modified="false">
+			std::cout &lt;&lt;
+	</snippet>
+	<snippet group="C++" trigger="cpb" id="" complement="copy_backward" removed="false" modified="false">
+			std::copy_backward(std::begin($container$), std::end($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="swr" id="" complement="swap_ranges" removed="false" modified="false">
+			std::swap_ranges(std::begin($container$), std::end($container$), std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="rtc" id="" complement="rotate_copy" removed="false" modified="false">
+			std::rotate_copy(std::begin($container$), std::begin($$), std::end($container$),
+			  std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="mxe" id="" complement="max_element" removed="false" modified="false">
+			auto pos = std::max_element(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="rte" id="" complement="rotate" removed="false" modified="false">
+			std::rotate(std::begin($container$), std::begin($$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="stv" id="" complement="vector" removed="false" modified="false">
+			std::vector&lt;$$&gt; $$
+	</snippet>
+	<snippet group="C++" trigger="cpi" id="" complement="copy_if" removed="false" modified="false">
+			std::copy_if(std::begin($container$), std::end($container$), std::begin($$),
+			[]($$) {
+			  $$
+			});
+	</snippet>
+	<snippet group="C++" trigger="cni" id="" complement="count_if" removed="false" modified="false">
+			auto n = std::count_if(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			});
+	</snippet>
+	<snippet group="C++" trigger="cpn" id="" complement="copy_n" removed="false" modified="false">
+			std::copy_n(std::begin($container$), $$, std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="srt" id="" complement="sort" removed="false" modified="false">
+			std::sort(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="spt" id="" complement="stable_partition" removed="false" modified="false">
+			auto pos = std::stable_partition(std::begin($container$), std::end($container$), []($$) {
+			  $$});
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="msm" id="" complement="mismatch" removed="false" modified="false">
+			auto values = std::mismatch(std::begin($container$), std::end($container$), std::begin($container$));
+			if (values.first == std::end($container$)) {
+			  $$
+			} else {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="ptc" id="" complement="partition_copy" removed="false" modified="false">
+			std::partition_copy(std::begin($container$), std::end($container$),
+			                  std::begin($$), std::end($$));
+	</snippet>
+	<snippet group="C++" trigger="pst" id="" complement="partial_sort" removed="false" modified="false">
+			std::partial_sort(std::begin($container$), std::end($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="fnd" id="" complement="find" removed="false" modified="false">
+			auto pos = std::find(std::begin($container$), std::end($container$), $$);
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="fre" id="" complement="for_each" removed="false" modified="false">
+			std::for_each(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			});
+	</snippet>
+	<snippet group="C++" trigger="mne" id="" complement="min_element" removed="false" modified="false">
+			auto pos = std::min_element(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="fne" id="" complement="find_end" removed="false" modified="false">
+			auto pos = std::find_std::end(std::begin($container$), std::end($container$),
+			  std::begin($$), std::end($$));
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="mrg" id="" complement="merge" removed="false" modified="false">
+			std::merge(std::begin($container$), std::end($container$),
+			std::begin($$), std::end($$), std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="srh" id="" complement="search" removed="false" modified="false">
+			auto pos = std::search(std::begin($container$), std::end($container$),
+			  std::begin($$), std::end($$));
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="fni" id="" complement="find_if" removed="false" modified="false">
+			auto pos = std::find_if(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			});
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="ptn" id="" complement="partition" removed="false" modified="false">
+			auto pos = std::partition(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			});
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="srn" id="" complement="search_n" removed="false" modified="false">
+			auto pos = std::search_n(std::begin($container$), std::end($container$),$$,$$);
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="ano" id="" complement="any_of" removed="false" modified="false">
+			if (std::any_of(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			})) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="nxp" id="" complement="next_permutation" removed="false" modified="false">
+			if (std::next_permutation(std::begin($container$), std::end($container$))) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="rvr" id="" complement="reverse" removed="false" modified="false">
+			std::reverse(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="rmc" id="" complement="remove_copy" removed="false" modified="false">
+			std::remove_copy(std::begin($container$), std::end($container$),
+			  std::begin($container$), $$);
+	</snippet>
+	<snippet group="C++" trigger="sts" id="" complement="stable_sort" removed="false" modified="false">
+			std::stable_sort(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="rmf" id="" complement="remove_copy_if" removed="false" modified="false">
+			std::remove_copy_if(std::begin($container$), std::end($container$),
+			  std::begin($container$), []($$) {
+			    $$
+			});
+	</snippet>
+	<snippet group="C++" trigger="rci" id="" complement="replace_copy_if" removed="false" modified="false">
+			std::replace_copy_if(std::begin($container$), std::end($container$),
+			  std::begin($container$), []($$) {
+			  $$
+			  }, $$);
+	</snippet>
+	<snippet group="C++" trigger="rmi" id="" complement="remove_if" removed="false" modified="false">
+			auto pos = std::remove_if(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			});
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="rvc" id="" complement="reverse_copy" removed="false" modified="false">
+			std::reverse_copy(std::begin($container$), std::end($container$), std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="oit" id="" complement="copy" removed="false" modified="false">
+			std::copy(std::begin($container$), std::end($container$), std::ostream_iterator&lt;$$&gt;{
+			%\istd::cout, "$$"
+			});
+	</snippet>
+	<snippet group="C++" trigger="sth" id="" complement="sort_heap" removed="false" modified="false">
+			std::sort_heap(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="phh" id="" complement="push_heap" removed="false" modified="false">
+			std::push_heap(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="ffo" id="" complement="find_first_of" removed="false" modified="false">
+			auto pos = std::find_first_of(std::begin($container$), std::end($container$),
+			  std::begin($$), std::end($$));
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="gnr" id="" complement="generate" removed="false" modified="false">
+			std::generate(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			});
+	</snippet>
+	<snippet group="C++" trigger="ipr" id="" complement="is_permutation" removed="false" modified="false">
+			if (std::is_permutation(std::begin($container$), std::end($container$), std::begin($$))) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="ipt" id="" complement="is_partitioned" removed="false" modified="false">
+			if (std::is_partitioned(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			  })) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="mkh" id="" complement="make_heap" removed="false" modified="false">
+			std::make_heap(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="fil" id="" complement="fill" removed="false" modified="false">
+			std::fill(std::begin($container$), std::end($container$), $$);
+	</snippet>
+	<snippet group="C++" trigger="fin" id="" complement="find_if_not" removed="false" modified="false">
+			auto pos = std::find_if_not(std::begin($container$), std::end($container$),[]($$) {
+			  $$
+			});
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="lwr" id="" complement="string_lower" removed="false" modified="false">
+			std::transform(std::begin($container$), std::end($container$), std::begin($container$), [](char c) {
+			return std::tolower(c); });
+	</snippet>
+	<snippet group="C++" trigger="lxc" id="" complement="lexigraphical_compare" removed="false" modified="false">
+			if (std::lexigraphical_compare(std::begin($container$), std::end($container$),
+			  std::begin($$), std::end($$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="shf" id="" complement="random_shuffle" removed="false" modified="false">
+			std::random_shuffle(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="ajf" id="" complement="adjacent_find" removed="false" modified="false">
+			auto pos = std::adjacent_find(std::begin($container$), std::end($container$));
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="trm" id="" complement="string_trim_right" removed="false" modified="false">
+			$container$.erase($container$.find_last_not_of(" \\t\\n\\r") + 1);
+	</snippet>
+	<snippet group="C++" trigger="gnn" id="" complement="generate_n" removed="false" modified="false">
+			std::generate_n(std::begin($container$), $$, []($$) {
+			  $$
+			});
+	</snippet>
+	<snippet group="C++" trigger="nno" id="" complement="none_of" removed="false" modified="false">
+			if (std::none_of(std::begin($container$), std::end($container$), []($$) {
+			  $$
+			})) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="pph" id="" complement="pop_heap" removed="false" modified="false">
+			std::pop_heap(std::begin($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="bns" id="" complement="binary_search" removed="false" modified="false">
+			auto pos = std::binary_search(std::begin($container$), std::end($container$), $$);
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="inc" id="" complement="includes" removed="false" modified="false">
+			if (std::includes(std::begin($container$), std::end($container$),
+			  std::begin($$), std::end($$))) {
+			    $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="lwb" id="" complement="lower_bound" removed="false" modified="false">
+			auto pos = std::lower_bound(std::begin($container$), std::end($container$), $$);
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="upb" id="" complement="upper_bound" removed="false" modified="false">
+			auto pos = std::upper_bound(std::begin($container$), std::end($container$), $$);
+			if (pos != std::end($container$)) {
+			  $$
+			}
+	</snippet>
+	<snippet group="C++" trigger="eqr" id="" complement="equal_range" removed="false" modified="false">
+			auto bounds = std::equal_range(std::begin($container$), std::end($container$), $$);
+	</snippet>
+	<snippet group="C++" trigger="erl" id="" complement="equal_range" removed="false" modified="false">
+			auto bounds = std::equal_range(std::begin($container$), std::end($container$), $$,
+			  []($$,$$) { $$ });
+	</snippet>
+	<snippet group="C++" trigger="stu" id="" complement="set_union" removed="false" modified="false">
+			auto pos = std::set_union(std::begin($container$), std::end($container$),
+			  std::begin($$), std::end($$), std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="stn" id="" complement="set_intersection" removed="false" modified="false">
+			auto pos = std::set_intersection(std::begin($container$), std::end($container$),
+			  std::begin($$), std::end($$), std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="std" id="" complement="set_difference" removed="false" modified="false">
+			auto pos = std::set_difference(std::begin($container$), std::end($container$),
+			  std::begin($$), std::end($$), std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="ssd" id="" complement="set_symmetric_difference" removed="false" modified="false">
+			auto pos = std::set_symmetric_difference(std::begin($container$),
+			  std::end($container$), std::begin($$), std::end($$), std::begin($$));
+	</snippet>
+	<snippet group="C++" trigger="ipm" id="" complement="inplace_merge" removed="false" modified="false">
+			std::inplace_merge(std::begin($container$), std::end($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="mov" id="" complement="move" removed="false" modified="false">
+			std::move(std::begin($container$), std::end($container$), std::begin($container$));
+	</snippet>
+	<snippet group="C++" trigger="mvb" id="" complement="move_backward" removed="false" modified="false">
+			std::move_backward(std::begin($container$), std::end($container$), std::end($container$));
+	</snippet>
+	<snippet group="C++" trigger="swp" id="" complement="swap" removed="false" modified="false">
+			std::swap($container$, $$);
+	</snippet>
+</snippets>
